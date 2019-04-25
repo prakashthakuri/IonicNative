@@ -1,14 +1,62 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
-    </ion-title>
+    Ionic Native
+   </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-label>
+<h1>Battery Status</h1>
+<h3>Battery Level</h3>
+<p>{{stat}}</p>
+
+
+
+
+
+</ion-label>
+<br/>
+<br/>
+
+
+
+  <ion-button expand='block' (click)="btnClick()">Vibrate</ion-button>
+
+<ion-card>
+
+    <ion-card-header>
+      <h1> Control Brightness</h1>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-range color ="secondary" min="0" max= "10" step="1" (ionChange)="setBrightness()" [(ngModel)]="brightness">
+
+
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>1</ion-label>
+
+      </ion-range>
+    </ion-card-content>
+
+</ion-card>
+<br/>
+<br/>
+
+<ion-label stacked>Text
+
+<ion-textarea rows="5" [(ngModel)]="text">
+</ion-textarea>
+<ion-button expand="block" (click)="sayText()">Text to Speech</ion-button>
+
+
+</ion-label>
+<br/>
+<br/>
+<br/>
+<ion-label padding>
+<ion-button expand="block" (click)="presentToast()">Toast</ion-button>
+<ion-button expand="block" (click)="presentToastWithOptions()">Toast with Options</ion-button>
+</ion-label>
 </ion-content>
